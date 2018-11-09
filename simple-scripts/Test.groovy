@@ -6,6 +6,8 @@ def xml = new MarkupBuilder()
 
 def x = [1, 2, 3, 4, 5]
 
-assert (x<<6) == [1, 2, 3, 4, 5]
+// assert (x<<6) == [1, 2, 3, 4, 5]
+
+assert !'' == !null
 
 
