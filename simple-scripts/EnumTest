@@ -1,0 +1,19 @@
+enum Days{
+SUN, MON, TUE, WED, THU, FRI, SAT
+}
+
+Range r = Days.MON..Days.FRI
+println r.step(1)
+println r.size()
+assert r.contains(Days.WED)
+println r.from
+println r.to
+
+def l = Days.values()
+println l
+println l.size()
+def l2 = l - Days.SAT
+println l2
+l2 += Days.SAT
+println l[3]
+
