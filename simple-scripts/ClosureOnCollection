@@ -1,0 +1,37 @@
+List nums = [1,2,3,4,5,6,88,8]
+
+nums.each { println it }
+
+nums.eachWithIndex { num, index -> 
+    println "$index: $num"
+}
+
+nums.findAll {
+    it%2 == 0
+}
+
+
+List two = nums.collect { it  * 3 }
+println two
+
+def log = { String type, Date createOn, String msg ->
+    println "$createOn [$type] - $msg"
+}
+
+log("Debug", new Date(), "This is my first debug")
+
+def debugLog = log.curry("Debug")
+
+debugLog(new Date(), "Hello")
+
+def todayDebugLog = log.curry("Debug", new Date())
+
+todayDebugLog("Hello!!")
+
+def typeLog = log.ncurry(1, new Date())
+
+typeLog("Hello", "Hello")
+
+
+def crazyPersonLog = log.rcurry("Why am I Log");
+crazyPersonLog("Test", new Date())
